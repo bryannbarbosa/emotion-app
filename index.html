@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AngularJS Application</title>
+        <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+        <link rel="stylesheet" href="style/main.css">
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/services/userSvc.js"></script>
+        <script src="scripts/controllers/myCtrl.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.js"></script>
+        <script src="node_modules/angular-material/angular-material.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+      <div layout="row" layout-align="center center">
+        <div flex="80">
+          <div layout="row" layout-align="center center">
+            <h1>Olá, {{ UserName }}</h1>
+          </div>
+        </div>
+	  </div>
+	  <div layout="row" layout-align="center center">
+	    <div flex="80">
+	      <div layout="row" layout-align="center center">
+	        <h3 class="main text-center">Como você está se sentindo hoje?</h3>
+	      </div>
+	        <div layout="row" layout-align="center center">
+	          <div flex flex-xs="50">
+	          <section layout="row" layout-xs="column" layout-align-xs="start start" layout-align="center center">
+				 <md-button class="groupX left" ng-click="insertReaction('confiante', 'green')"><i class="material-icons middle green main">fiber_manual_record</i> Confiante</md-button>
+				 <md-button class="groupX middle" ng-click="insertReaction('feliz', 'yellow')"><i class="material-icons middle yellow main">fiber_manual_record</i> Feliz</md-button>
+				 <md-button class="groupX middle" ng-click="insertReaction('animado', 'orange')"><i class="material-icons middle orange main">fiber_manual_record</i> Animado</md-button>
+				 <md-button class="groupX right" ng-click="insertReaction('triste', 'blue')"><i class="material-icons middle blue main">fiber_manual_record</i> Triste</md-button>
+				 <md-button class="groupX right" ng-click="insertReaction('curioso', 'gray')"><i class="material-icons middle gray main">fiber_manual_record</i> Curioso</md-button>
+			  </section>
+	           </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  <div layout="row" layout-align="start center">
+	    <div flex>
+	      <div layout="row" layout-align="center center" ng-repeat="reaction in reactions">
+	        <div flex="80">
+	          <div layout="row" layout-align="center center">
+	            <md-toolbar class="md-warn main margin">
+				  <div class="md-toolbar-tools">
+				     <p class=""><i class="material-icons middle {{ reaction.color }} main">fiber_manual_record</i> {{ UserName }} está {{ reaction.feeling }}</p>
+				   </div>
+				  </md-toolbar>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+    </body>
+</html>

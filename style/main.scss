@@ -1,0 +1,29 @@
+
+.main {
+	&.middle {
+	  vertical-align: middle;
+	}
+	&.green {
+	  color: #00e676;
+	}
+	&.yellow {
+	  color: #fdd835;
+	}
+	&.orange {
+	  color: #fb8c00;
+	}
+	&.blue {
+	  color: #0277bd;
+	}
+	&.gray {
+	  color: #455a64;
+	}
+	&.margin {
+	  background-color: #f5f5f5 !important;
+	  margin-bottom: 0.5em;
+	  color: #757575 !important;
+	}
+	&.text-center {
+		text-align: center;
+	}
+}
